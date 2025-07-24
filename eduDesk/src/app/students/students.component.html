@@ -13,20 +13,30 @@
         <th class="data">email</th>
         <th class="data">address</th>
         <th class="data">gender</th>
-        <th class="data">image</th>
+        <!-- <th class="data">image</th> -->
         <th class="data">action</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="rows">
-        <td class="data">name</td>
+      <tr *ngFor="let student of students; let i=index" class="rows">
+        <td class="data">{{student.name}}</td>
 
-        <td class="data">email</td>
-        <td class="data">address</td>
-        <td class="data">gender</td>
-        <td class="data">image</td>
-        <td class="data">action</td>
+        <td class="data">{{student.email}}</td>
+        <td class="data">{{student.address}}</td>
+        <td class="data">{{student.gender}}</td>
+        <!-- <td class="data">image</td> -->
+        <td  class="data action">
+           <button  type="button" (click)="deleteStudent(i)" style="padding:5px "  class="btn btn-danger" aria-label="Close">
+          
+      Delete
+    </button>
+   <button type="button" style="padding:5px;" class="btn btn-primary" aria-label="Close">
+      Update
+    </button></td>
       </tr>
     </tbody>
   </table>
 </div>
+
+
+

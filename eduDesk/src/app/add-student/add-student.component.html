@@ -1,19 +1,28 @@
 <div class="container">
   <h1>Student Registration Form</h1>
   <div class="form-container">
-    <form action="">
-      <input type="text" name="name" placeholder="enter  name" />
-      <input type="email" name="email" placeholder="enter  email" />
-      <input type="address" name="address" placeholder="enter  address" />
-      Select gender
-      <input class="radio" type="radio" name="gender" id="male" value="male">
-      Male<label for="male"></label>
-      <input class="radio" type="radio" name="gender" id="female" value="female">Female
-      <label for="female"></label>
-      <input type="file" />
-      <button type="button" class="btn btn-primary" aria-label="Close">
+    <form #stuDetails="ngForm" (ngSubmit)="submit(stuDetails.value)" novalidate>
+      <input type="text" name="name" placeholder="Enter name" ngModel />
+      <input type="number" name="age" placeholder="Enter age" ngModel  />
+      <input type="email" name="email" placeholder="Enter email" ngModel />
+      <input type="address" name="address" placeholder="Enter address" ngModel />
+
+      <span class="gender-label">Select Gender:</span>
+       <input class="radio" type="radio" name="gender" id="male" value="male" ngModel >
+      <label for="male">Male</label>
+      <input class="radio" type="radio" name="gender" id="female" value="female" ngModel >
+      <label for="female">Female</label>
+
+     
+      <button type="submit" class="btn btn-primary">
         Submit
       </button>
+      
     </form>
+    <button routerLink="" class="see">
+        See list
+      </button>
+    
   </div>
+  
 </div>

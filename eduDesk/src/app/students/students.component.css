@@ -29,3 +29,10 @@ table thead{
     padding: 10px;
     
 }
+.action{
+    width: 200px;
+    
+}
+.action button{
+    margin-left: 5px;
+}

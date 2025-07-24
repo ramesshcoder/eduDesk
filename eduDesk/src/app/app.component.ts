@@ -5,7 +5,7 @@ import { AddStudentComponent } from "./add-student/add-student.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, StudentsComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
