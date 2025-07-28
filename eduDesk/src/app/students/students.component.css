@@ -2,37 +2,148 @@
     
     margin: 100px;
     background-color: white;
-    border: 2px solid black;
-    border-radius: 5px;
+   
+    border-radius: 8px; 
     
     padding: 20px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+   
+
 }
 .header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid black;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-
     padding: 20px;
 }
 
+table{
+  border: 0;
+}
 
 table thead{
-    background-color: white;
-    border: 1px solid black;
+     background: linear-gradient(135deg, #4a90e2, #357ab7);
+      color: #fff;
+      
+    /* border: 1px solid black; */
 }
 .data{
-    border: 1px solid black;
-    width: 150px;
+    /* border: 1px solid black; */
+    width: 120px;
     text-align: center;
     padding: 10px;
     
+}
+.rows{
+    border: 0.5px solid black;
 }
 .action{
     width: 200px;
     
 }
+.action i:hover {
+    cursor: pointer;
+
+}
 .action button{
     margin-left: 5px;
+}
+/* form container modal */
+/* Container */
+.containe {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+  
+}
+
+/* Form inputs */
+.form-container form input[type="text"],
+.form-container form input[type="email"],
+.form-container form input[type="address"],
+.form-container form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-container form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Labels */
+.form-container form label {
+  margin-left: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Radio buttons */
+.form-container form .radio {
+  margin: 0 5px  0;
+}
+
+/* Button */
+.form-container form button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+.form-container form button:hover {
+  background: #0056b3;
+}
+
+/* Spacing for "Select gender" */
+.form-container form .gender-label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+  color: #444;
+}
+.see{
+   width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+.see:hover{
+  background: #0056b3;
+}
+.icons{
+  font-size: 40px;
+  margin: 5px;
 }
