@@ -55,11 +55,19 @@ export class StudentsComponent {
     this.updateModal=true
   }
   upDated(){
-    let students=JSON.parse(localStorage.getItem('studentData')||'[]')
-    this.
+   if(this.selectedIndex!==-1){
+    this.students[this.selectedIndex]=this.selectedStudent;
+    localStorage.setItem('StudentData',JSON.stringify(this.students));
+    this.updateModal=false;
     alert("updated successfully")
+   }
+    
+    
     
 
+  }
+  closeModal(){
+    this.updateModal=false;
   }
 
   

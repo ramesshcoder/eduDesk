@@ -105,16 +105,18 @@ table thead{
 
 /* Button */
 .form-container form button {
-  width: 100%;
-  padding: 12px;
-  background: #007bff;
+  width: 50%;
+  padding: 10px;
+
   color: #fff;
   border: none;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
   margin-top: 15px;
+  margin-left: 25%;
   transition: background 0.3s;
+  display: block;
 }
 
 .form-container form button:hover {
@@ -146,4 +148,59 @@ table thead{
 .icons{
   font-size: 40px;
   margin: 5px;
+}
+/* responsive design */
+@media (max-width: 768px) {
+  
+  .container{
+    width: 90%;
+  }
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 90%;
+    /* overflow-y: hidden; */
+  }
+
+  thead {
+    display: none; /* Hide header on mobile */
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 0.95rem;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 8px 5px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+    flex-basis: 50%;
+  }
+
+  .action {
+    justify-content: flex-end;
+  }
 }

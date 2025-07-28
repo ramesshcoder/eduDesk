@@ -1,4 +1,4 @@
-<div class="container" *ngIf="!modal && !updateModal ">
+<div class="container" *ngIf="!modal && !updateModal">
   <div class="header">
     <h1 class="">Student management system</h1>
     <button
@@ -13,7 +13,7 @@
   <table class="mx-5 my-4">
     <thead>
       <tr class="rows">
-        <th class="data">Name</th>
+        <th class="data" >Name</th>
 
         <th class="data">Email</th>
         <th class="data">Address</th>
@@ -25,12 +25,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let student of students; let i = index" class="rows">
-        <td class="data">{{ student.name }}</td>
+        <td class="data" data-label="name">{{ student.name }}</td>
 
-        <td class="data">{{ student.email }}</td>
-        <td class="data">{{ student.address }}</td>
-        <td class="data">{{ student.gender }}</td>
-        <td class="data">{{ student.age }}</td>
+        <td class="data" data-label="email">{{ student.email }}</td>
+        <td class="data" data-label="address">{{ student.address }}</td>
+        <td class="data" data-label="gender">{{ student.gender }}</td>
+        <td class="data" data-label="age">{{ student.age }}</td>
         <!-- <td class="data">image</td> -->
         <td class="data action">
           <i
@@ -40,7 +40,7 @@
 
           <i
             class="bi bi-pencil-square text-success icons"
-            (click)="UpDate(student,i)"
+            (click)="UpDate(student, i)"
           ></i>
         </td>
       </tr>
@@ -48,7 +48,7 @@
   </table>
 </div>
 <!--             form container modal -->
- <div class="moda" *ngIf="modal">
+<div class="moda" *ngIf="modal">
   <div class="containe">
     <h1>Student Registration Form</h1>
     <div class="form-container">
@@ -57,7 +57,7 @@
         (ngSubmit)="submit(stuDetails.value)"
         novalidate
       >
-        <input type="text" name="name" placeholder="Enter name" ngModel />
+        <input type="text" name="name" placeholder="Enter name"  ngModel />
         <input type="number" name="age" placeholder="Enter age" ngModel />
         <input type="email" name="email" placeholder="Enter email" ngModel />
         <input
@@ -95,24 +95,35 @@
   </div>
 </div>
 <!--                      update modal form -->
-                       <div class="moda" *ngIf="updateModal">
+<div class="moda" *ngIf="updateModal">
   <div class="containe">
     <h1>Student correction Form</h1>
+
     <div class="form-container">
-      <form
-        #stuDetails="ngForm"
-        (ngSubmit)="upDated()"
-      
-        
-      >
-        <input type="text" name="name" placeholder="Enter name" [ngModel]="selectedStudent.name" />
-        <input type="number" name="age" placeholder="Enter age" [ngModel]="selectedStudent.age" />
-        <input type="email" name="email" placeholder="Enter email" [ngModel]="selectedStudent.email" />
+      <form #stuDetails="ngForm" (ngSubmit)="upDated()">
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter name"
+          [(ngModel)]="selectedStudent.name"
+        />
+        <input
+          type="number"
+          name="age"
+          placeholder="Enter age"
+          [(ngModel)]="selectedStudent.age"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter email"
+          [(ngModel)]="selectedStudent.email"
+        />
         <input
           type="address"
           name="address"
           placeholder="Enter address"
-          [ngModel]="selectedStudent.address"
+          [(ngModel)]="selectedStudent.address"
         />
 
         <span class="gender-label">Select Gender:</span>
@@ -123,7 +134,7 @@
           name="gender"
           id="male"
           value="male"
-          [ngModel]="selectedStudent.gender"
+          [(ngModel)]="selectedStudent.gender"
         />
         <label for="male">Male</label>
         <input
@@ -132,15 +143,14 @@
           name="gender"
           id="female"
           value="female"
-          [ngModel]="selectedStudent.gender"
+          [(ngModel)]="selectedStudent.gender"
         />
         <label for="female">Female</label>
         <!-- <input type="file" name="image" placeholder="image" alt="image" /> -->
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-danger" (click)="closeModal()">Cancel</button>
       </form>
     </div>
   </div>
 </div>
-
-
